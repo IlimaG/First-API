@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const PORT = 3001;
-
+const cors = require("cors")
 const users = require("./users.json");
+
+app.use(cors())
 
 app.get("/", (request, response) => {
     response.send({response: true, code: 200, users: users});
